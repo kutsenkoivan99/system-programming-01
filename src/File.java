@@ -1,4 +1,6 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,19 +26,13 @@ public class File {
             String sCurrentLine;
             while ((sCurrentLine = br.readLine()) != null) {
                 for (String wordValue : sCurrentLine.split("[\\.,\\s!;?:\"]+")) { // "\\P{L}+"
-                    _words.add(new Word(wordValue));
+                    if (wordValue.length() <= 30) {
+                        _words.add(new Word(wordValue));
+                    }
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    private void CheckWords() {
-        for (Word word : _words) {
-            if (word.toString().length() > 30) {
-                // algorithm here
-            }
         }
     }
 
