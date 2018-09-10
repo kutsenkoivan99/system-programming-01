@@ -2,8 +2,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Collections.*;
-
 public class File {
     private String _filePath;
     private ArrayList<Word> _words = new ArrayList<>();
