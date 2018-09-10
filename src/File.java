@@ -1,7 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+
+import static java.util.Collections.*;
 
 public class File {
     private String _filePath;
@@ -41,9 +42,8 @@ public class File {
         }
     }
 
-    public ArrayList<Word> SortWordsByConsonantCount() {
-        Collections.sort(_words, Word.COMPARE_BY_CONSONANT_COUNT);
-        return _words;
+    public void SortWordsByConsonantCount() {
+        _words.sort(Word.COMPARE_BY_CONSONANT_COUNT);
     }
 
     public List<String> GetWords() {
