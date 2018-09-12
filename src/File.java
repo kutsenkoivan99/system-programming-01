@@ -43,7 +43,15 @@ public class File {
     public List<String> GetWords() {
         List<String> wordsValues = new ArrayList<>();
         for (Word word : _words) {
-            wordsValues.add(word.toString());
+            boolean contains = false;
+            for (String wordValue : wordsValues) {
+                if (wordValue.equals(word.toString())) {
+                    contains = true;
+                }
+            }
+            if (!contains) {
+                wordsValues.add(word.toString());
+            }
         }
         return wordsValues;
     }
